@@ -5,14 +5,13 @@
 package com.mycompany.mavenproject1;
 
 
-public class User extends Mavenproject1 {
 
-      
-    private String name;
-    private String email;
-    private String school;
-    private int age;
-    private String gender;
+   class User  {
+        private String name;
+        private String email;
+        private String school;
+        private int age;
+        private String gender;
 
    User(String name, String email, String school, int age, String gender) {
         this.name = name;

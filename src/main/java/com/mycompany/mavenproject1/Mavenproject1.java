@@ -13,15 +13,9 @@ import java.awt.event.*;
 public class Mavenproject1 {
 
     public static void main(String[] args) {
-       
-      
-        System.out.println("Hello world");
-        
-        
-        
+         JFrame j = new JFrame();
+          
         
     }
-
-    
-    
+  
 }
