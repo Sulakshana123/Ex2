@@ -13,9 +13,9 @@ import java.awt.event.*;
 public class Mavenproject1 {
 
     public static void main(String[] args) {
-         JFrame j = new JFrame();
           
-        
+         Form f = new Form();
+         f.setVisible(true);
     }
   
 }
