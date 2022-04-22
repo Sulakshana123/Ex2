@@ -29,6 +29,8 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class Form extends javax.swing.JFrame {
     List <User> User = new ArrayList();
     private Component Jrame;
+    User Obj1 = new User();
+    
 
     public Form() {
         initComponents();
@@ -60,8 +62,10 @@ public class Form extends javax.swing.JFrame {
         deletet = new javax.swing.JButton();
         readt = new javax.swing.JButton();
         cleart = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(preferredSize());
         setSize(new java.awt.Dimension(500, 500));
 
         jPanel1.setBackground(new java.awt.Color(0, 153, 153));
@@ -169,6 +173,15 @@ public class Form extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 255));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("View");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -194,6 +207,7 @@ public class Form extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(79, 79, 79)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
                     .addComponent(SP, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -254,9 +268,11 @@ public class Form extends javax.swing.JFrame {
                     .addComponent(deletet)
                     .addComponent(ET)
                     .addComponent(readt))
-                .addGap(47, 47, 47)
+                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(7, 7, 7)
                 .addComponent(SP, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -281,7 +297,7 @@ public class Form extends javax.swing.JFrame {
     
     private void submitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitActionPerformed
         submit(); 
-        addRowTable();  
+       
     }//GEN-LAST:event_submitActionPerformed
 
     private void ETActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ETActionPerformed
@@ -307,6 +323,10 @@ public class Form extends javax.swing.JFrame {
     private void cleartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleartActionPerformed
         clearText();
     }//GEN-LAST:event_cleartActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        addRowTable();  
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -353,6 +373,7 @@ public class Form extends javax.swing.JFrame {
     private javax.swing.JButton deletet;
     private javax.swing.JTextField emailt;
     private javax.swing.JTextField gendert;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -368,8 +389,6 @@ public class Form extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void submit() {
-        
-       User Obj1 = new User();
        Obj1.setName(namet.getText());
        Obj1.setEmail(emailt.getText());
        Obj1.setSchool(schoolt.getText());
@@ -377,7 +396,7 @@ public class Form extends javax.swing.JFrame {
        Obj1.setGender(gendert.getText());
        
        User.add(Obj1);
-      
+    
        
       
     }
@@ -406,7 +425,7 @@ public class Form extends javax.swing.JFrame {
         XSSFSheet sheet = workbook.createSheet();
 
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
-        for(int i =0; i < User.size(); i++){
+        for(int i =0; i < 1; i++){
             System.out.println(i);
             System.out.println(User.get(i).getName());
             System.err.println(User);
