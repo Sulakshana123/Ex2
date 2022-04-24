@@ -6,14 +6,14 @@ package com.mycompany.mavenproject1;
 
 
 
-   class User  {
+    public class User  {
         private String name;
         private String email;
         private String school;
         private int age;
         private String gender;
 
-   User(String name, String email, String school, int age, String gender) {
+    public User(String name, String email, String school, int age, String gender) {
         this.name = name;
         this.email = email;
         this.school = school;
@@ -21,11 +21,13 @@ package com.mycompany.mavenproject1;
         this.gender = gender;
     }
    
-   User(){
+    public User(){
    
    
    
    }
+
+   
    
    
     @Override
@@ -75,5 +77,7 @@ package com.mycompany.mavenproject1;
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    
     
 }
